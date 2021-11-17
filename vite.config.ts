@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import { minifyHtml, injectHtml } from 'vite-plugin-html'
 
 export default defineConfig({
   build: {
@@ -13,4 +14,7 @@ export default defineConfig({
       },
     },
   },
+  plugins:[
+    minifyHtml()
+  ]
 });
