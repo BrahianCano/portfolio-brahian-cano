@@ -4,8 +4,9 @@ import { customElement } from 'lit/decorators.js'
 // Import nabvar styles
 import { styleHost } from './style-navbar'
 
-// Import images webp
+// Import images 
 import logoPNG from '../../assets/img/brahian-cano-logotipo-transparente.png'
+import logoWebP from '../../assets/img/brahian-cano-logotipo-transparente.webp'
 
 /**
  * Nabvar element
@@ -18,11 +19,13 @@ export class BcNavbar extends LitElement {
     ]
 
     render() {
+        const LOGO = window.canUseWebp ? logoPNG : logoWebP
+
         return html`
             <header>
                 <div>
                     <a>
-                        <img src="${logoPNG}"/>
+                        <img src="${LOGO}"/>
                     </a>
                     <nav>
                         <ul>
@@ -42,6 +45,8 @@ export class BcNavbar extends LitElement {
     `
     }
 }
+
+declare const window: any;
 
 declare global {
     interface HTMLElementTagNameMap {
