@@ -19,13 +19,14 @@ export class BcNavbar extends LitElement {
     ]
 
     render() {
-        const LOGO = window.canUseWebp ? logoPNG : logoWebP
-
         return html`
             <header>
                 <div>
                     <a>
-                        <img src="${LOGO}"/>
+                        <picture>
+                            <source srcset="${logoWebP}" type="image/webp"> 
+                            <img src="${logoPNG}" alt="logo brahian cano"/>
+                        </picture>
                     </a>
                     <nav>
                         <ul>
